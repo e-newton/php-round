@@ -1,0 +1,11 @@
+{
+  "name": "php-round",
+  "version": "0.0.1",
+  "description": "A javascript-based library containing functions that match built in `round` function in PHP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

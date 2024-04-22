@@ -23,7 +23,7 @@ function generateHalfTest(int $precision, int $mode) {
   $rounded = round($a, $precision, $mode);
   return createTestArray($a, $precision, $mode, $rounded);
 }
-$testFile = fopen(getcwd() . '/tests/roundTests.json', 'w') or die('Unable to open test file');
+$testFile = fopen(getcwd() . '/tests/tmp/roundTests.json', 'w') or die('Unable to open test file');
 $results = [];
 for ($precision = -10; $precision <= 10; $precision++) {
   for ($i = 0; $i < 100; $i++) {

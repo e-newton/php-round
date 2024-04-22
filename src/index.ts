@@ -8,13 +8,16 @@ enum PHPRoundMode {
 function phpRound(
   value: number,
   precision: number = 0,
-  mode: PHPRoundMode = PHPRoundMode.PHP_ROUND_HALF_UP
+  mode: PHPRoundMode = PHPRoundMode.PHP_ROUND_HALF_UP,
 ): number {
   let tmpValue, tmpValue2: number;
   if (!Number.isFinite(value) || value === 0.0) {
     return value;
   }
-  const places = precision < Number.MIN_SAFE_INTEGER + 1 ? Number.MIN_SAFE_INTEGER : precision;
+  const places =
+    precision < Number.MIN_SAFE_INTEGER + 1
+      ? Number.MIN_SAFE_INTEGER
+      : precision;
   const exponent = 10 ** Math.abs(precision);
 
   if (value >= 0.0) {
@@ -36,7 +39,7 @@ function phpRound(
   tmpValue = phpRoundHelper(tmpValue, value, exponent, places, mode);
 
   if (Math.abs(places) < 23) {
-    if (places > 0 ) {
+    if (places > 0) {
       tmpValue = tmpValue / exponent;
     } else {
       tmpValue = tmpValue * exponent;
@@ -48,18 +51,18 @@ function phpRound(
     }
   }
   return tmpValue;
-};
+}
 
 function phpRoundHelper(
   integral: number,
   value: number,
   exponent: number,
   places: number,
-  mode: PHPRoundMode
+  mode: PHPRoundMode,
 ): number {
   const valueAbs = Math.abs(value);
   let edgeCase;
-  
+
   switch (mode) {
     case PHPRoundMode.PHP_ROUND_HALF_UP: {
       edgeCase = phpRoundGetBasicEdgeCase(integral, exponent, places);
@@ -76,12 +79,17 @@ function phpRoundHelper(
       return integral;
     }
 
-    default: throw new Error('Invalid round mode');
+    default:
+      throw new Error("Invalid PHP round mode");
   }
 }
 
-function phpRoundGetBasicEdgeCase(integral: number, exponent: number, places: number): number {
-  return (places > 0)
+function phpRoundGetBasicEdgeCase(
+  integral: number,
+  exponent: number,
+  places: number,
+): number {
+  return places > 0
     ? Math.abs((integral + copysign(0.5, integral)) / exponent)
     : Math.abs((integral + copysign(0.5, integral)) * exponent);
 }

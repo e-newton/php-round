@@ -1,4 +1,4 @@
-import { phpRound, PHPRoundMode } from "../src";
+import { phpRound } from "../src";
 
 /* Tests from Example #1 https://www.php.net/manual/en/function.round.php */
 describe('Example #1 round tests', () => {

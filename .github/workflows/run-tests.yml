@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
 jobs:
-  Explore-GitHub-Actions:
+  tests:
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repository code

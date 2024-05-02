@@ -1,0 +1,33 @@
+name: 'Coverage'
+on:
+    pull_request:
+      branches:
+        - master
+        - main
+    push:
+      branches:
+        - master
+jobs:
+    coverage:
+        runs-on: ubuntu-22.04
+        steps:
+          - name: Check out repository code
+            uses: actions/checkout@v4
+
+          - name: Setup PHP
+            uses: shivammathur/setup-php@v2
+            with:
+              php-version: '8.1'
+              coverage: none
+
+          - name: Install Node
+            uses: actions/setup-node@v4
+            with:
+              node-version: 20
+              cache: npm
+
+          - name: Install NPM Modules
+            run: npm ci
+
+          - name: Generate Coverage Report
+            uses: ArtiomTr/jest-coverage-report-action@v2

@@ -1,4 +1,4 @@
-name: Run tests for php-round
+name: Tests
 on: 
   workflow_dispatch:
   push:

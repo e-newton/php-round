@@ -1,0 +1,84 @@
+{
+  "$schema": "tests.schema.json",
+  "tests": [
+    {
+      "value": 3.4
+    },
+    {
+      "value": 3.5
+    },
+    {
+      "value": 3.6
+    },
+    {
+      "value": 3.6,
+      "precision": 0
+    },
+    {
+      "value": 5.045,
+      "precision": 2
+    },
+    {
+      "value": 5.055,
+      "precision": 2
+    },
+    {
+      "value": 345,
+      "precision": -2
+    },
+    {
+      "value": 345,
+      "precision": -3
+    },
+    {
+      "value": 678,
+      "precision": -2
+    },
+    {
+      "value": 678,
+      "precision": -3
+    },
+    {
+      "value": 123456789,
+      "precision": 2
+    },
+    {
+      "value": 123456789,
+      "precision": 8
+    },
+    {
+      "value": 123456789,
+      "precision": 3
+    },
+    {
+      "value": 123456789,
+      "precision": 4
+    },
+    {
+      "value": 123.456789,
+      "precision": 2
+    },
+    {
+      "value": 123.456789,
+      "precision": 8
+    },
+    {
+      "value": 123.456789,
+      "precision": 3
+    },
+    {
+      "value": 123.456789,
+      "precision": 4
+    },
+    {
+      "value": 9.5,
+      "precision": 0,
+      "mode": "PHP_ROUND_HALF_UP"
+    },
+    {
+      "value": 9.5,
+      "precision": 0,
+      "mode": "PHP_ROUND_HALF_DOWN"
+    }
+  ]
+}

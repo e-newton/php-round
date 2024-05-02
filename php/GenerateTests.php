@@ -1,53 +1,41 @@
 <?php
-function createTestArray(int|float $number, int $precision, int $mode, int|float $result) {
-  return [
-    'num' => $number,
+
+const DEFAULT_PRECISION = 0;
+const DEFAULT_MODE = 'PHP_ROUND_HALF_UP';
+const MODES = [
+  'PHP_ROUND_HALF_UP' => PHP_ROUND_HALF_UP,
+  'PHP_ROUND_HALF_DOWN' => PHP_ROUND_HALF_DOWN,
+  'PHP_ROUND_HALF_EVEN' => PHP_ROUND_HALF_EVEN,
+  'PHP_ROUND_HALF_ODD' => PHP_ROUND_HALF_DOWN,
+];
+
+$testsFile = file_get_contents(getcwd() . '/tests/tests.json') or die('Unable to open test file');
+$proofedTestsFiles = fopen(getcwd() . '/tests/tmp/proofed_tests.json', 'w') or die ('Unable to open proof test file');
+$testsFileArray = json_decode($testsFile);
+$tests = $testsFileArray->tests;
+$proofedTests = [];
+foreach ($tests as $test) {
+  $value = $test->value;
+  $precision = $test->precision ?? null;
+  $mode = $test->mode ?? null;
+
+  if ($mode !== null && !array_key_exists($mode, MODES)) {
+    die("Invalid mode $test->mode \r\n");
+  }
+  
+  $proofedTests[] = [
+    'value' => $value,
     'precision' => $precision,
     'mode' => $mode,
-    'expected' => $result
+    'expected' => round(
+      $value,
+      $precision ?? DEFAULT_PRECISION,
+      MODES[$mode ?? DEFAULT_MODE]
+    )
   ];
 }
 
-function generateRandomTest(int $precision, int $mode) {
-  $aFloat = rand(0, 10 ** 10) / (10 ** 10);
-  $aInt = rand(-1000, 1000);
-  $a = $aInt + $aFloat;
-  $rounded = round($a, $precision, $mode);
-  return createTestArray($a, $precision, $mode, $rounded);
-}
-
-function generateHalfTest(int $precision, int $mode) {
-  $aFloat = (0.5 * 10 ** 10) / (10 ** 10);
-  $aInt = rand(-10 ** 10, 10 ** 10);
-  $a = $aInt + $aFloat;
-  $rounded = round($a, $precision, $mode);
-  return createTestArray($a, $precision, $mode, $rounded);
-}
-$testFile = fopen(getcwd() . '/tests/tmp/roundTests.json', 'w') or die('Unable to open test file');
-$results = [];
-for ($precision = -10; $precision <= 10; $precision++) {
-  for ($i = 0; $i < 100; $i++) {
-    $results[] = generateRandomTest($precision, PHP_ROUND_HALF_UP);
-    $results[] = generateHalfTest($precision, PHP_ROUND_HALF_UP);
-  }
-}
-for ($precision = -10; $precision <= 10; $precision++) {
-  for ($i = 0; $i < 100; $i++) {
-    $results[] = generateRandomTest($precision, PHP_ROUND_HALF_DOWN);
-    $results[] = generateHalfTest($precision, PHP_ROUND_HALF_DOWN);
-  }
-}
-for ($precision = -10; $precision <= 10; $precision++) {
-  for ($i = 0; $i < 100; $i++) {
-    $results[] = generateRandomTest($precision, PHP_ROUND_HALF_EVEN);
-    $results[] = generateHalfTest($precision, PHP_ROUND_HALF_EVEN);
-  }
-}
-for ($precision = -10; $precision <= 10; $precision++) {
-  for ($i = 0; $i < 100; $i++) {
-    $results[] = generateRandomTest($precision, PHP_ROUND_HALF_ODD);
-    $results[] = generateHalfTest($precision, PHP_ROUND_HALF_ODD);
-  }
-}
-fwrite($testFile, json_encode($results));
+fwrite($proofedTestsFiles, json_encode($proofedTests, JSON_PRETTY_PRINT));
+fclose($proofedTestsFiles);
+echo "Proofed Tests Written. \r\n"
 ?>

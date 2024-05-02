@@ -4,7 +4,7 @@
   "description": "A javascript-based library containing functions that match built in `round` function in PHP",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "php php/GenerateTests.php && jest"
   },
   "author": "",
   "license": "ISC",

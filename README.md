@@ -1,4 +1,4 @@
-#PHP Round
+# PHP Round
 ## A TypeScript implementation of the PHP builtin `round` function
 
 [![Tests](https://github.com/e-newton/php-round/actions/workflows/run-tests.yml/badge.svg)](https://github.com/e-newton/php-round/actions/workflows/run-tests.yml)

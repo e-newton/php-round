@@ -1,12 +1,11 @@
 name: 'Coverage'
 on:
-    pull_request:
+  pull_request:
+    branches:
+      - main
+  push:
       branches:
-        - master
         - main
-    push:
-      branches:
-        - master
 jobs:
     coverage:
         runs-on: ubuntu-22.04

@@ -9,9 +9,6 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-22.04
     steps:
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
       - name: Check out repository code
         uses: actions/checkout@v4
 

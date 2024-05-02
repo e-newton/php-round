@@ -58,6 +58,7 @@ jobs:
                SUMMARY="$(npm test -- --coverageReporters='text-summary' | tail -2 | head -1)"
                TOKENS=($SUMMARY)
                echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
+               echo "VALUE=$(echo ${TOKENS[2]::-1})" >> $GITHUB_ENV
           - name: Create the Badge
             if: github.ref == 'refs/heads/main'
             uses: schneegans/dynamic-badges-action@v1.7.0
@@ -70,5 +71,6 @@ jobs:
               color: green
               namedLogo: jest
               minColorRange: 90
-              maxColorRange: 99
+              maxColorRange: 100
+              valColorRange: ${{ env.VALUE }}
 

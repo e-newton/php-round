@@ -58,17 +58,17 @@ jobs:
                SUMMARY="$(npm test -- --coverageReporters='text-summary' | tail -2 | head -1)"
                TOKENS=($SUMMARY)
                echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
-               - if: github.ref == 'refs/heads/main'
-                name: Create the Badge
-                uses: schneegans/dynamic-badges-action@v1.7.0
-                with:
-                  auth: ${{ secrets.GIST_SECRET }}
-                  gistID: 973903d12880da1524ee6f9c9005ee23
-                  label: Coverage
-                  message: ${{ env.COVERAGE }}
-                  filename: coverage_badge.json
-                  color: green
-                  namedLogo: jest
-                  minColorRange: 90
-                  maxColorRange: 100
+          - name: Create the Badge
+            if: github.ref == 'refs/heads/main'
+            uses: schneegans/dynamic-badges-action@v1.7.0
+            with:
+              auth: ${{ secrets.GIST_SECRET }}
+              gistID: 973903d12880da1524ee6f9c9005ee23
+              label: Coverage
+              message: ${{ env.COVERAGE }}
+              filename: coverage_badge.json
+              color: green
+              namedLogo: jest
+              minColorRange: 90
+              maxColorRange: 100
 

@@ -79,6 +79,95 @@
       "value": 9.5,
       "precision": 0,
       "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": 0.0
+    },
+    {
+      "value": 10000000000000000000000000000000000000000000000000000000000000000000000000000000
+    },
+    {
+      "value": 9.5,
+      "precision": -9223372036854775808
+    },
+    {
+      "value": -1.55
+    },
+    {
+      "value": -1.55,
+      "precision": 1
+    },
+    {
+      "value": 3.141592653589793238462643383279502884197,
+      "precision": -100
+    },
+    {
+      "value": 3.141592653589793238462643383279502884197,
+      "precision": 25
+    },
+    {
+      "value": 3.141592653589793238462643383279502884197,
+      "precision": 23
+    },
+    {
+      "value": 0.0
+    },
+    {
+      "value": -0.0
+    },
+    {
+      "value": 0.0000000000000000000000053,
+      "precision": -24
+    },
+    {
+      "value": 0.0,
+      "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": 10000000000000000000000000000000000000000000000000000000000000000000000000000000,
+      "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": 9.5,
+      "precision": -9223372036854775808,
+      "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": -1.55,
+      "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": -1.55,
+      "precision": 1,
+      "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": 3.141592653589793238462643383279502884197,
+      "precision": -100,
+      "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": 3.141592653589793238462643383279502884197,
+      "precision": 25,
+      "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": 3.141592653589793238462643383279502884197,
+      "precision": 23,
+      "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": 0.0,
+      "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": -0.0,
+      "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": 0.0000000000000000000000053,
+      "precision": -24,
+      "mode": "PHP_ROUND_HALF_DOWN"
     }
   ]
 }

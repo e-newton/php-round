@@ -70,5 +70,5 @@ jobs:
               color: green
               namedLogo: jest
               minColorRange: 90
-              maxColorRange: 100
+              maxColorRange: 99
 

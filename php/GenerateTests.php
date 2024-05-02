@@ -10,6 +10,9 @@ const MODES = [
 ];
 
 $testsFile = file_get_contents(getcwd() . '/tests/tests.json') or die('Unable to open test file');
+if (!file_exists(getcwd() . '/tests/tmp')) {
+  mkdir (getcwd() . '/tests/tmp', 0744);
+}
 $proofedTestsFiles = fopen(getcwd() . '/tests/tmp/proofed_tests.json', 'w') or die ('Unable to open proof test file');
 $testsFileArray = json_decode($testsFile);
 $tests = $testsFileArray->tests;

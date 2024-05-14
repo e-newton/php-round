@@ -8,6 +8,9 @@
     "test": "php php/GenerateTests.php && jest",
     "build": "tsc"
   },
+  "files": [
+    "dist"
+  ],
   "author": "e-newton",
   "license": "MIT",
   "homepage": "https://github.com/e-newton/php-round",

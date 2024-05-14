@@ -2,12 +2,19 @@
   "name": "php-round",
   "version": "0.0.1",
   "description": "A javascript-based library containing functions that match built in `round` function in PHP",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "php php/GenerateTests.php && jest"
+    "test": "php php/GenerateTests.php && jest",
+    "build": "tsc"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "e-newton",
+  "license": "MIT",
+  "homepage": "https://github.com/e-newton/php-round",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/e-newton/php-round"
+  },
   "devDependencies": {
     "@babel/preset-typescript": "^7.24.1",
     "@types/jest": "^29.5.12",

@@ -82,3 +82,8 @@ To run tests use
 
 Running the tests will first proof the `test.json` file against the install PHP version and generate Jenkins
 tests which will then be run against `phpRound`. We currently aim for 100% code coverage in branches, functions, and statements.
+
+To build the package run
+```
+    npm run build
+```

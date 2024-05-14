@@ -14,7 +14,11 @@ is tested based on `PHP v8.1.2`.
 ## Usage
 
 ```
-    phpRound(value: number, precision: number = 0, mode: PHPRoundMode = PHPRoundMode.PHP_ROUND_HALF_UP);
+    phpRound(
+        value: number,
+        precision: number = 0,
+        mode: PHPRoundMode = PHPRoundMode.PHP_ROUND_HALF_UP
+    );
 ```
 
 Returns the rounded value of `value` to a specified precision (number of places after then decimal place). 

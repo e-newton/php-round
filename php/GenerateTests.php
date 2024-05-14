@@ -6,7 +6,7 @@ const MODES = [
   'PHP_ROUND_HALF_UP' => PHP_ROUND_HALF_UP,
   'PHP_ROUND_HALF_DOWN' => PHP_ROUND_HALF_DOWN,
   'PHP_ROUND_HALF_EVEN' => PHP_ROUND_HALF_EVEN,
-  'PHP_ROUND_HALF_ODD' => PHP_ROUND_HALF_DOWN,
+  'PHP_ROUND_HALF_ODD' => PHP_ROUND_HALF_ODD,
 ];
 
 $testsFile = file_get_contents(getcwd() . '/tests/tests.json') or die('Unable to open test file');

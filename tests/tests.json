@@ -168,6 +168,71 @@
       "value": 0.0000000000000000000000053,
       "precision": -24,
       "mode": "PHP_ROUND_HALF_DOWN"
+    },
+    {
+      "value": 0.0,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": 10000000000000000000000000000000000000000000000000000000000000000000000000000000,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": 9.5,
+      "precision": -9223372036854775808,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": -1.55,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": -1.55,
+      "precision": 1,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": 3.141592653589793238462643383279502884197,
+      "precision": -100,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": 3.141592653589793238462643383279502884197,
+      "precision": 25,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": 3.141592653589793238462643383279502884197,
+      "precision": 23,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": 0.0,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": -0.0,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": 0.0000000000000000000000053,
+      "precision": -24,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": 8.5,
+      "precision": 0,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": 1.55,
+      "precision": 1,
+      "mode": "PHP_ROUND_HALF_ODD"
+    },
+    {
+      "value": -1.55,
+      "precision": 1,
+      "mode": "PHP_ROUND_HALF_ODD"
     }
   ]
 }

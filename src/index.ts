@@ -5,6 +5,13 @@ enum PHPRoundMode {
   PHP_ROUND_HALF_ODD = 0x04,
 }
 
+/**
+* Rounds a number based on the implementation found in PHP v8.1.2
+* @param value - Number to be rounded
+* @param [precision=0] - Number of digits after the decimal place the number should be rounded to.
+* Can be negative or zero.
+* @param [mode=PHPRoundMode.PHP_ROUND_HALF_UP] - Mode in which rounding occurs. 
+*/
 function phpRound(
   value: number,
   precision: number = 0,

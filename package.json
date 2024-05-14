@@ -1,6 +1,6 @@
 {
   "name": "php-round",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A javascript-based library containing functions that match built in `round` function in PHP",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

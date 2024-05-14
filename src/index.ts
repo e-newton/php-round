@@ -117,6 +117,20 @@ function phpRoundHelper(
 
       return integral;
     }
+    case PHPRoundMode.PHP_ROUND_HALF_EVEN: {
+      edgeCase = phpRoundGetBasicEdgeCase(integral, exponent, places);
+      if (valueAbs > edgeCase) {
+        return integral + copysign(1.0, integral);
+      } else if (valueAbs === edgeCase) {
+        const even = integral % 2 === 0;
+
+        if (!even) {
+          return integral + copysign(1.0, integral);
+        }
+      }
+
+      return integral;
+    }
 
     default:
       throw new Error("Invalid PHP round mode");

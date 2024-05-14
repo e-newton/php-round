@@ -11,6 +11,52 @@ up, down, to the nearest even integer, and the to nearest odd integer.
 Implemenation is transcribed from the [PHP Interpreter repository](https://github.com/php/php-src/blob/master/ext/standard/math.c) and 
 is tested based on `PHP v8.1.2`.
 
+## Usage
+
+```
+    phpRound(value: number, precision: number = 0, mode: PHPRoundMode = PHPRoundMode.PHP_ROUND_HALF_UP);
+```
+
+Returns the rounded value of `value` to a specified precision (number of places after then decimal place). 
+`precision` can also be negative to round to a number of decimals places before the decimal place. `precision` of zero means
+to round to the nearest integer.
+
+### Modes
+
+`phpRound` supports the rounding modes found in `PHP v8.1.2`. Either the TypeScript enum can be used or the numerical value
+based on the values defined in the [PHP Interpreter repository.](https://github.com/php/php-src/blob/master/ext/standard/php_math_round_mode.h)
+
+```
+    enum PHPRoundMode {
+      PHP_ROUND_HALF_UP = 0x01,
+      PHP_ROUND_HALF_DOWN = 0x02,
+      PHP_ROUND_HALF_EVEN = 0x03,
+      PHP_ROUND_HALF_ODD = 0x04,
+    }
+```
+
+|Mode                 | Description                                                                                              |
+|---------------------|----------------------------------------------------------------------------------------------------------|
+|`PHP_ROUND_HALF_UP`  | Rounds `value` away from zero when it is half way there, making 1.5 into 2, and -1.5 into -2.            |
+|`PHP_ROUND_HALF_DOWN`| Rounds `value` towards from zero when it is half way there, making 1.5 into 1, and -1.5 into -1.         |
+|`PHP_ROUND_HALF_EVEN`| Rounds `value` towards the nearest even value when it is half way there, making both 1.5 and 2.5 into 2. |
+|`PHP_ROUND_HALF_ODD` | Rounds `value` towards the nearest odd value when it is half way there, making 1.5 into 1 and 2.5 into 3.|
+
+
+For example:
+```
+    phpRound(9.5, 0, PhpRoundMode.PHP_ROUND_HALF_UP) // 10
+    phpRound(9.5, 0, PhpRoundMode.PHP_ROUND_HALF_DOWN) // 9
+    phpRound(9.5, 0, PhpRoundMode.PHP_ROUND_HALF_EVEN) // 10
+    phpRound(9.5, 0, PhpRoundMode.PHP_ROUND_HALF_ODD) // 9
+
+    phpRound(8.5, 0, PhpRoundMode.PHP_ROUND_HALF_UP) // 9
+    phpRound(8.5, 0, PhpRoundMode.PHP_ROUND_HALF_DOWN) // 8
+    phpRound(8.5, 0, PhpRoundMode.PHP_ROUND_HALF_EVEN) // 8
+    phpRound(8.5, 0, PhpRoundMode.PHP_ROUND_HALF_ODD) // 9
+```
+
+
 ## Installation
 `php-round` contains no dependencies and should work in any Node or Browser enviroment. To install via NPM:
 ```

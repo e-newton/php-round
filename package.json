@@ -1,6 +1,6 @@
 {
   "name": "php-round",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A javascript-based library containing functions that match built in `round` function in PHP",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,6 +13,12 @@
   ],
   "author": "e-newton",
   "license": "MIT",
+  "keywords": [
+    "typescript",
+    "php",
+    "rounding",
+    "math"
+  ],
   "homepage": "https://github.com/e-newton/php-round",
   "repository": {
     "type": "git",
